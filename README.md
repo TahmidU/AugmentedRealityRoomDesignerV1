@@ -7,7 +7,7 @@
   <p align="center">
     University Individual Project: AR Room Designer!
     <br />
-    <a href="">View Demo</a>
+    <a href="https://youtu.be/KvdZaC-7LEk">View Demo</a>
   </p>
 </p>
 <br>
