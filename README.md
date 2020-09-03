@@ -18,8 +18,6 @@
 * [About the Project](#about-the-project)
   * [Project Links](#project-links)
   * [Tools Used](#tools-used)
-* [Installation](#installation)
-* [Usage](#usage)
 * [License](#license)
 * [Acknowledgements](#acknowledgements)
 
@@ -35,10 +33,6 @@ The problem that this project solves is to provide a platform/store were users c
 - Android Client : https://github.com/TahmidU/RoomDesignerClientAndroidV1
 
 ### Tools Used
-
-## Installation
-
-## Usage
 
 ## License
 
