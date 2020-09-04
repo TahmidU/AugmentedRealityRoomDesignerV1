@@ -62,7 +62,7 @@ Java 8 is required for both projects.
 
 ## Installation
 
-The following installation guide is for Windows 10. As for other OSes this may vary. 
+The following installation guide is for Windows 10. As for other OSes, this may vary. 
 
 ### API Installation
 
