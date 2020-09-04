@@ -143,4 +143,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgements
 
-Dr Ross Paterson - For approving this project and supporting me through this project.
+Dr Ross Paterson - For supporting me through this project as my supervisor.
