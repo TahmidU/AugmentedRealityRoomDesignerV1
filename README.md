@@ -131,7 +131,7 @@ These are all in the gradle file. These will download and install once you sync 
 Ensure that the MySQL database is running. Open the project in InteliJ and click the run button.
 
 ### Android Client Usage
-Click the run button to open the emulator. The app will be installing on the emulator shortly.
+Click the run button to open the emulator. The app will install on the emulator shortly.
 
 ## Future
 
