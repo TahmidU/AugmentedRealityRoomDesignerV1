@@ -1,0 +1,20 @@
+CREATE TABLE category (cat_id bigint(255) NOT NULL AUTO_INCREMENT, cat_name varchar(255) NOT NULL UNIQUE, PRIMARY KEY (cat_id));
+CREATE TABLE image (image_id bigint(255) NOT NULL AUTO_INCREMENT, upload_date date NOT NULL, image_directory varchar(255) NOT NULL UNIQUE, is_thumbnail bit(1) NOT NULL, item_id bigint(255) NOT NULL, PRIMARY KEY (image_id));
+CREATE TABLE item (item_id bigint(255) NOT NULL AUTO_INCREMENT, name varchar(255) NOT NULL, description varchar(1000), `date` date NOT NULL, has_model bit(1) NOT NULL, user_id bigint(255) NOT NULL, cat_id bigint(255) NOT NULL, type_id bigint(255) NOT NULL, PRIMARY KEY (item_id));
+CREATE TABLE item_download (download_id bigint(255) NOT NULL AUTO_INCREMENT, `date` date NOT NULL, item_id bigint(255) NOT NULL, PRIMARY KEY (download_id));
+CREATE TABLE item_view (view_id bigint(255) NOT NULL AUTO_INCREMENT, `date` date NOT NULL, item_id bigint(255) NOT NULL, PRIMARY KEY (view_id));
+CREATE TABLE model (model_id bigint(255) NOT NULL AUTO_INCREMENT, directory varchar(255) NOT NULL UNIQUE, item_id bigint(255) NOT NULL, PRIMARY KEY (model_id));
+CREATE TABLE password_token (password_id bigint(225) NOT NULL AUTO_INCREMENT, token int(5) NOT NULL, expiry bigint(255) NOT NULL, user_id bigint(255) NOT NULL, PRIMARY KEY (password_id));
+CREATE TABLE type (type_id bigint(255) NOT NULL AUTO_INCREMENT, type_name varchar(255) NOT NULL UNIQUE, PRIMARY KEY (type_id));
+CREATE TABLE `user` (user_id bigint(255) NOT NULL AUTO_INCREMENT, first_name varchar(255) NOT NULL, last_name varchar(255) NOT NULL, email varchar(255) NOT NULL UNIQUE, phone_num varchar(11) UNIQUE, active bit(1) NOT NULL, password varchar(255) NOT NULL, PRIMARY KEY (user_id));
+CREATE TABLE verification_token (verification_id bigint(255) NOT NULL AUTO_INCREMENT, token int(5) NOT NULL, expiry bigint(255) NOT NULL, user_id bigint(255) NOT NULL, PRIMARY KEY (verification_id));
+ALTER TABLE verification_token ADD CONSTRAINT FKverificati219415 FOREIGN KEY (user_id) REFERENCES `user` (user_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE password_token ADD CONSTRAINT FKpassword_t316318 FOREIGN KEY (user_id) REFERENCES `user` (user_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE item ADD CONSTRAINT FKitem363798 FOREIGN KEY (type_id) REFERENCES type (type_id);
+ALTER TABLE item_download ADD CONSTRAINT FKitem_downl576177 FOREIGN KEY (item_id) REFERENCES item (item_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE item_view ADD CONSTRAINT FKitem_view555936 FOREIGN KEY (item_id) REFERENCES item (item_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE item ADD CONSTRAINT FKitem623974 FOREIGN KEY (cat_id) REFERENCES category (cat_id);
+ALTER TABLE image ADD CONSTRAINT FKimage998948 FOREIGN KEY (item_id) REFERENCES item (item_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE model ADD CONSTRAINT FKmodel755446 FOREIGN KEY (item_id) REFERENCES item (item_id) ON UPDATE Cascade ON DELETE Cascade;
+ALTER TABLE item ADD CONSTRAINT FKitem424035 FOREIGN KEY (user_id) REFERENCES `user` (user_id) ON UPDATE Cascade ON DELETE Cascade;
+
